@@ -1,0 +1,16 @@
+C:\Users\55YV\C#\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.deps.json
+C:\Users\55YV\C#\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.dll
+C:\Users\55YV\C#\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.pdb
+C:\Users\55YV\C#\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.csprojAssemblyReference.cache
+C:\Users\55YV\C#\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.AssemblyInfoInputs.cache
+C:\Users\55YV\C#\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.AssemblyInfo.cs
+C:\Users\55YV\C#\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.dll
+C:\Users\55YV\C#\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.pdb
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.deps.json
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.dll
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\bin\Debug\netstandard2.0\CapaDomain.pdb
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.csprojAssemblyReference.cache
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.AssemblyInfoInputs.cache
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.AssemblyInfo.cs
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.dll
+C:\Users\55YV\source\repos\Perceptron\CapaDomain\obj\Debug\netstandard2.0\CapaDomain.pdb
