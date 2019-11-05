@@ -8,7 +8,7 @@ namespace Ejemplos
         static void Main(string[] args)
         {
 
-            Entrenamiento(3, "C:/Users/55YV/Downloads/ArchivosPerceptron/problema.csv");
+            Entrenamiento(3, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv");
             Simulacion("1;0");
 
         }
@@ -134,7 +134,7 @@ namespace Ejemplos
                     {
                         for (int j = 0; j < numEntradas; j++)
                         {
-                            funcionSoma = (vectorEntrada[j] * matrizPeso[q, j]) + funcionSoma;
+                            funcionSoma = (vectorEntrada[j] * matrizPeso[j, q]) + funcionSoma;
                         }
 
                         double calcularSalida = (Math.Truncate((funcionSoma - vectorUmbral[q]) * 10000) / 10000);
@@ -213,7 +213,7 @@ namespace Ejemplos
             Console.Write("\n");
             Console.WriteLine("Entrenamiento finalizado.");
 
-            using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/ArchivosPerceptron/pesosEntrenamiento.txt", false))
+            using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/redes/ArchivosPerceptron/pesosEntrenamiento.txt", false))
             {
                 for (int i = 0; i < numEntradas; i++)
                 {
@@ -225,7 +225,7 @@ namespace Ejemplos
                 }
             }
 
-            using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/ArchivosPerceptron/umbralesEntrenamiento.txt", false))
+            using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/redes/ArchivosPerceptron/umbralesEntrenamiento.txt", false))
             {
                 for (int i = 0; i < vectorUmbral.Length; i++)
                 {

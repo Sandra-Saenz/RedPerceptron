@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\55YV\\source\\repos\\Perceptron\\Ejemplos\\Ejemplos.csproj",
+      "projectUniqueName": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
       "projectName": "Ejemplos",
-      "projectPath": "C:\\Users\\55YV\\source\\repos\\Perceptron\\Ejemplos\\Ejemplos.csproj",
+      "projectPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
       "packagesPath": "C:\\Users\\55YV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55YV\\source\\repos\\Perceptron\\Ejemplos\\obj\\",
+      "outputPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

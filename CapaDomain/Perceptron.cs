@@ -98,7 +98,7 @@ namespace CapaDomain
                     {
                         for (int j = 0; j < numEntradas; j++)
                         {
-                            funcionSoma = (vectorEntrada[j] * matrizPeso[q, j]) + funcionSoma;
+                            funcionSoma = (vectorEntrada[j] * matrizPeso[j, q]) + funcionSoma;
                         }
 
                         double calcularSalida = (Math.Truncate((funcionSoma - vectorUmbral[q]) * 10000) / 10000);
