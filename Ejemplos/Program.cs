@@ -239,7 +239,6 @@ namespace Ejemplos
             Console.ReadKey();
         }
 
-        //arreglar el numero aleatorio. para que no se pase de -1
         static double GenerarNumeroAleatorio()
         {
             Random random = new Random();

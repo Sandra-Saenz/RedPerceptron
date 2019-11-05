@@ -34,7 +34,6 @@ namespace CapaUI
         private int ObtenerNIteraciones()
         {
             return Convert.ToInt32(txtIteracion.Text);
-
         }
 
         private void CargarSolucionEnDGV()
@@ -104,9 +103,7 @@ namespace CapaUI
             int numeroSalidas = salida;
             int numeroPatrones = numeroFilas - 1;
 
-            //llamar al metodo y pasarle los parametros
             perceptron.EntrenamientoPerceptron(numeroIteraciones, numeroEntradas, numeroSalidas, numeroPatrones, direccion);
-
         }
 
         private void Grafica()
@@ -114,7 +111,7 @@ namespace CapaUI
 
         }
 
-            private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
+        private void BtnLimpiar_Click(object sender, RoutedEventArgs e)
         {
             txtIteracion.Text = "";
             txtDireccionArchivo.Text = "";

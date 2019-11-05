@@ -30,7 +30,7 @@ namespace CapaDomain
         public void EntrenamientoPerceptron(int iteraciones, int numEntradas, int numSalidas,
             int numPatrones,  string direccionArchivo)
         {
-            int num = 1; double emp = 1; double erms; 
+            int num = 1; double emp = 0.0001; double erms; 
             double rataAprendizaje = 0.1;
 
             double[] vectorUmbral = new double[numSalidas];
