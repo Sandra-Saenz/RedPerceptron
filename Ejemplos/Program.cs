@@ -8,7 +8,7 @@ namespace CapaConsola
         static void Main(string[] args)
         {
 
-            Entrenamiento(50, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv", 0.1, 0.0001);
+            Entrenamiento(30, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv", 0.5, 0.00001);
             Simulacion("1;0");
             Console.ReadKey();
         }
@@ -134,19 +134,19 @@ namespace CapaConsola
                     {
                         for (int j = 0; j < numEntradas; j++)
                         {
-                            funcionSoma = (vectorEntrada[j] * matrizPeso[j, q]) + funcionSoma;
+                            funcionSoma = (vectorEntrada[j] * matrizPeso[j,q]) + funcionSoma;
                         }
 
                         double calcularSalida = (funcionSoma - vectorUmbral[q]);
                         Console.WriteLine("salida de la red: " + calcularSalida);
 
-                        if (calcularSalida < 0)
-                        {
-                            SalidaRed[q] = 0;
-                        }
-                        else if (true)
+                        if (calcularSalida >= 0)
                         {
                             SalidaRed[q] = 1;
+                        }
+                        else
+                        {
+                            SalidaRed[q] = 0;
                         }
                         Console.WriteLine("salida de la red con la funcion activacion: " + SalidaRed[q]);
                     }
@@ -327,29 +327,28 @@ namespace CapaConsola
             for (int w = 0; w < numEntradas; w++)
             {
                 patronSimulado[w] = Convert.ToDouble(numeroPatron[w]);
-                Console.WriteLine(patronSimulado[w]);
             }
 
                 //calcular las salidas de la red --> Yri
-                double funcionSoma = 0; 
-                for (int q = 0; q < numEntradas; q++)
-                {
-                    for (int j = 0; j < numSalidas; j++)
-                    {
-                        funcionSoma = (patronSimulado[q] * matrizPeso[q, j]) + funcionSoma;
-                    }
-                    calcularSalida = (funcionSoma - vectorUmbral[q]);
-                    Console.WriteLine("salida de la red: " + calcularSalida);
+            double funcionSoma = 0; 
+            for (int q = 0; q < numSalidas; q++)
+            {
+               for (int j = 0; j < numEntradas; j++)
+               {
+                  funcionSoma = (patronSimulado[j] * matrizPeso[j, q]) + funcionSoma;
+               }
+                  calcularSalida = (funcionSoma - vectorUmbral[q]);
+                  Console.WriteLine("salida de la red: " + calcularSalida);
 
-                    if (calcularSalida < 0)
-                    {
-                        SalidaRed[q] = 0;
-                    }
-                    else 
-                    {
-                        SalidaRed[q] = 1;
-                    }
-                funcionSoma = 0;
+                  if (calcularSalida >= 0)
+                  {
+                     SalidaRed[q] = 1;
+                  }
+                  else 
+                  {
+                     SalidaRed[q] = 0;
+                  }
+               funcionSoma = 0;
             }
 
             Console.Write("salida: \n");

@@ -98,18 +98,18 @@ namespace CapaDomain
                     {
                         for (int j = 0; j < numEntradas; j++)
                         {
-                            funcionSoma = (vectorEntrada[j] * matrizPeso[j, q]) + funcionSoma;
+                            funcionSoma = (vectorEntrada[j] * matrizPeso[j,q]) + funcionSoma;
                         }
 
                         double calcularSalida = (funcionSoma - vectorUmbral[q]);
 
-                        if (calcularSalida < 0)
-                        {
-                            SalidaRed[q] = 0;
-                        }
-                        else if (true)
+                        if (calcularSalida >= 0)
                         {
                             SalidaRed[q] = 1;
+                        }
+                        else 
+                        {
+                            SalidaRed[q] = 0;
                         }
                     }
 
@@ -250,21 +250,21 @@ namespace CapaDomain
 
             //calcular las salidas de la red --> Yri
             double funcionSoma = 0;
-            for (int q = 0; q < numEntradas; q++)
+            for (int q = 0; q < numSalidas; q++)
             {
-                for (int j = 0; j < numSalidas; j++)
+                for (int j = 0; j < numEntradas; j++)
                 {
-                    funcionSoma = (patronSimulado[q] * matrizPeso[q, j]) + funcionSoma;
+                    funcionSoma = (patronSimulado[j] * matrizPeso[j,q]) + funcionSoma;
                 }
                 calcularSalida = (funcionSoma - vectorUmbral[q]);
 
-                if (calcularSalida < 0)
+                if (calcularSalida >= 0)
                 {
-                    SalidaRed[q] = 0;
+                    SalidaRed[q] = 1;
                 }
                 else
                 {
-                    SalidaRed[q] = 1;
+                    SalidaRed[q] = 0;
                 }
                 funcionSoma = 0;
             }
