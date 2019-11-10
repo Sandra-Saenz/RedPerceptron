@@ -1,19 +1,19 @@
 ﻿using System;
 using System.IO;
 
-namespace Ejemplos
+namespace CapaConsola
 {
     class Program
     {
         static void Main(string[] args)
         {
 
-            Entrenamiento(3, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv");
+            Entrenamiento(50, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv", 0.1, 0.0001);
             Simulacion("1;0");
-
+            Console.ReadKey();
         }
 
-        private static void Entrenamiento(int iteraciones, string direccionArchivo)
+        private static void Entrenamiento(int iteraciones, string direccionArchivo, double rata, double ErrorMax)
         {
             int numEntradas = 0, numSalidas = 0;
             string direccion = direccionArchivo;
@@ -39,8 +39,8 @@ namespace Ejemplos
             }
             sr.Close();
 
-            int num = 1; double emp = 1; double erms;
-            double rataAprendizaje = 0.1;
+            int num = 1; double emp = ErrorMax; double erms;
+            double rataAprendizaje = rata;
 
             double[] vectorUmbral = new double[numSalidas];
             double[,] matrizPeso = new double[numEntradas, numSalidas];
@@ -137,7 +137,7 @@ namespace Ejemplos
                             funcionSoma = (vectorEntrada[j] * matrizPeso[j, q]) + funcionSoma;
                         }
 
-                        double calcularSalida = (Math.Truncate((funcionSoma - vectorUmbral[q]) * 10000) / 10000);
+                        double calcularSalida = (funcionSoma - vectorUmbral[q]);
                         Console.WriteLine("salida de la red: " + calcularSalida);
 
                         if (calcularSalida < 0)
@@ -154,7 +154,7 @@ namespace Ejemplos
                     //calcular los errores lineales producidos a la salida
                     for (int ii = 0; ii < numSalidas; ii++)
                     {
-                        erroresLineales[ii] = (Math.Truncate((vectorSalida[ii] - SalidaRed[ii]) * 10000) / 10000);
+                        erroresLineales[ii] = (vectorSalida[ii] - SalidaRed[ii]);
                         Console.WriteLine("error lineal " + ii + ": " + erroresLineales[ii]);
                     }
 
@@ -165,7 +165,7 @@ namespace Ejemplos
                         sumaErrores = erroresLineales[a] + sumaErrores;
                     }
 
-                    errorPatron[i] = (Math.Truncate((sumaErrores / numSalidas) * 10000) / 10000);
+                    errorPatron[i] = (sumaErrores / numSalidas);
                     Console.WriteLine("error del patron: " + errorPatron[i]);
 
                     //modificar pesos
@@ -176,7 +176,7 @@ namespace Ejemplos
                     {
                         for (int x = 0; x < numSalidas; x++)
                         {
-                            matrizPeso[z, x] = (Math.Truncate((matrizPeso[z, x] + rataAprendizaje * erroresLineales[x] * vectorEntrada[z]) * 10000) / 10000);
+                            matrizPeso[z, x] = (matrizPeso[z, x] + rataAprendizaje * erroresLineales[x] * vectorEntrada[z]);
                             Console.Write(matrizPeso[z, x] + " ");
                         }
                         Console.Write("\n");
@@ -187,7 +187,7 @@ namespace Ejemplos
                     Console.WriteLine("nuevo umbral salida");
                     for (int x = 0; x < numSalidas; x++)
                     {
-                        vectorUmbral[x] = (Math.Truncate((vectorUmbral[x] + rataAprendizaje * erroresLineales[x] * 1) * 10000) / 10000);
+                        vectorUmbral[x] = (vectorUmbral[x] + rataAprendizaje * erroresLineales[x] * 1);
                         Console.Write(vectorUmbral[x] + " ");
                     }
                 }
@@ -200,7 +200,7 @@ namespace Ejemplos
                     sumaErrorPatron = Math.Abs(errorPatron[l] + sumaErrorPatron);
                 }
 
-                erms = (Math.Truncate((sumaErrorPatron / Patrones) * 10000) / 10000);
+                erms = (sumaErrorPatron / Patrones);
                 Console.Write("\n");
                 Console.WriteLine("error entrenamiento " + erms);
 
@@ -236,7 +236,6 @@ namespace Ejemplos
             Console.Write("\n");
             Console.WriteLine("Pesos y umbrales guardados");
 
-            Console.ReadKey();
         }
 
         static double GenerarNumeroAleatorio()
@@ -257,56 +256,107 @@ namespace Ejemplos
                 numeroAletorio[1] = random.NextDouble() * signo[random.Next(0, 2)];
                 resultado = numeroAletorio[random.Next(0, 3)];
             }
-            return (Math.Truncate(resultado * 10000) / 10000);
+            return resultado;
         }
 
         private static void Simulacion(string patron)
         {
-            string dirPesos = "C:/Users/55YV/Downloads/ArchivosPerceptron/pesosEntrenamiento.txt";
-            string dirUmbrales = "C:/Users/55YV/Downloads/ArchivosPerceptron/umbralesEntrenamiento.txt";
+            Console.WriteLine("\nSimulacion \n");
+            Console.WriteLine("entrada: " + patron);
+
+            string dirPesos = "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/pesosEntrenamiento.txt";
+            string dirUmbrales = "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/umbralesEntrenamiento.txt";
+            string direccion = "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv";
 
             int numEntradas = 0, numSalidas = 0;
 
-            StreamReader sr = new StreamReader(dirPesos);
-            int numeroFilas = File.ReadAllLines(dirPesos).Length;
-            int Patrones = numeroFilas;
-
-
-            int num = 1; double emp = 1; double erms;
-            double rataAprendizaje = 0.1;
+            StreamReader sr = new StreamReader(direccion);
+            for (int f = 0; f < 1; f++)
+            {
+                string linea = sr.ReadLine();
+                for (int c = 0; c < linea.Length; c++)
+                {
+                    if (Convert.ToString(linea[c]) == "x" || Convert.ToString(linea[c]) == "X")
+                    {
+                        numEntradas++;
+                    }
+                    else if (Convert.ToString(linea[c]) == "y" || Convert.ToString(linea[c]) == "Y")
+                    {
+                        numSalidas++;
+                    }
+                }
+            }
+            sr.Close();
 
             double[] vectorUmbral = new double[numSalidas];
             double[,] matrizPeso = new double[numEntradas, numSalidas];
+            double[] SalidaRed = new double[numSalidas];
+            _ = new Random();
 
-            // guardar los valores del archivo en matrizPeso y vector umbral
+
+            // guardar los valores del archivo en matrizPeso 
+             int numeroFilas2 = File.ReadAllLines(dirPesos).Length;
             StreamReader sreader = new StreamReader(dirPesos);
-            for (int f = 0; f < Patrones; f++)
+            for (int f = 0; f < numeroFilas2; f++)
             {
-                string lineas = sreader.ReadLine();
-                string numeros = lineas.Replace(";", "");
-                for (int c = 0; c < numeros.Length; c++)
+                string linea = sreader.ReadLine();
+                string[] numero = linea.Split(';');
+                //string numeros = lineas.Replace(";", "");
+                for (int c = 0; c < numero.Length - 1; c++)
                 {
-                    if (Convert.ToString(numeros[c]) != ";")
-                    {
-                        matrizPeso[f, c] = (int)char.GetNumericValue(numeros[c]);
-                    }
+                   matrizPeso[f, c] = Convert.ToDouble(numero[c]);
                 }
             }
             sreader.Close();
 
             // guardar los valores del archivo en vector umbral
             StreamReader reader = new StreamReader(dirUmbrales);
-            _ = sreader.ReadLine();
-            for (int f = 0; f < 1; f++)
+            string lineas = reader.ReadLine();
+            string[] numeros = lineas.Split(';');
+            for (int f = 0; f < numeros.Length - 1; f++)
             {
-                string lineas = reader.ReadLine();
-                string numeros = lineas.Replace(";", "");
-                    if (Convert.ToString(numeros[f]) != ";")
-                    {
-                        vectorUmbral[f] = (int)char.GetNumericValue(numeros[f]);
-                    }
+                vectorUmbral[f] = Convert.ToDouble(numeros[f]);
             }
             sreader.Close();
+
+            double calcularSalida;
+            string[] numeroPatron = patron.Split(';');
+            double[] patronSimulado = new double[numEntradas];
+
+            //presentar el vector de entrada y el vector de salida
+            for (int w = 0; w < numEntradas; w++)
+            {
+                patronSimulado[w] = Convert.ToDouble(numeroPatron[w]);
+                Console.WriteLine(patronSimulado[w]);
+            }
+
+                //calcular las salidas de la red --> Yri
+                double funcionSoma = 0; 
+                for (int q = 0; q < numEntradas; q++)
+                {
+                    for (int j = 0; j < numSalidas; j++)
+                    {
+                        funcionSoma = (patronSimulado[q] * matrizPeso[q, j]) + funcionSoma;
+                    }
+                    calcularSalida = (funcionSoma - vectorUmbral[q]);
+                    Console.WriteLine("salida de la red: " + calcularSalida);
+
+                    if (calcularSalida < 0)
+                    {
+                        SalidaRed[q] = 0;
+                    }
+                    else 
+                    {
+                        SalidaRed[q] = 1;
+                    }
+                funcionSoma = 0;
+            }
+
+            Console.Write("salida: \n");
+            for (int i = 0; i < numSalidas; i++)
+            {
+                Console.WriteLine(SalidaRed[i]);
+            }
         }
     }
 }

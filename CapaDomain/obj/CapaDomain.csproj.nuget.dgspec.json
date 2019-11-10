@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj": {}
+    "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj": {
+    "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj",
+        "projectUniqueName": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj",
         "projectName": "CapaDomain",
-        "projectPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj",
+        "projectPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\CapaDomain\\CapaDomain.csproj",
         "packagesPath": "C:\\Users\\55YV\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\CapaDomain\\obj\\",
+        "outputPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\CapaDomain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

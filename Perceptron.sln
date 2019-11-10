@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29409.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaDomain", "CapaDomain\CapaDomain.csproj", "{6B298EFE-541C-4086-8ACE-2A882A2256FD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ejemplos", "Ejemplos\Ejemplos.csproj", "{F62366A8-EA93-4F18-9DE8-6D04EECD9928}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CapaConsola", "Ejemplos\CapaConsola.csproj", "{F62366A8-EA93-4F18-9DE8-6D04EECD9928}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaUI", "CapaUI\CapaUI.csproj", "{1725826E-AB20-4020-8531-3C643C250035}"
 EndProject

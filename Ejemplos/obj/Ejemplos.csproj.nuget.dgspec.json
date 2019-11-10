@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj": {}
+    "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj": {
+    "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
+        "projectUniqueName": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
         "projectName": "Ejemplos",
-        "projectPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
+        "projectPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\Ejemplos.csproj",
         "packagesPath": "C:\\Users\\55YV\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\55YV\\Source\\Repos\\RedPerceptron\\Ejemplos\\obj\\",
+        "outputPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

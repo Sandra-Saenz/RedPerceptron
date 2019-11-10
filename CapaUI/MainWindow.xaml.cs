@@ -39,8 +39,8 @@ namespace CapaUI
         private void CargarSolucionEnDGV()
         {
             lbTablaSolucion.Items.Clear();
-            string dirPeso = "C:/Users/55YV/Downloads/ArchivosPerceptron/pesosEntrenamiento.txt";
-            string dirUmbral = "C:/Users/55YV/Downloads/ArchivosPerceptron/umbralesEntrenamiento.txt";
+            string dirPeso = "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/pesosEntrenamiento.txt";
+            string dirUmbral = "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/umbralesEntrenamiento.txt";
 
             try
             {
@@ -102,8 +102,10 @@ namespace CapaUI
             int numeroEntradas = entrada;
             int numeroSalidas = salida;
             int numeroPatrones = numeroFilas - 1;
+            double rata = Convert.ToDouble(TxtRata.Text);
+            double errorMax = Convert.ToDouble(TxtErrorMax.Text);
 
-            perceptron.EntrenamientoPerceptron(numeroIteraciones, numeroEntradas, numeroSalidas, numeroPatrones, direccion);
+            perceptron.EntrenamientoPerceptron(numeroIteraciones, numeroEntradas, numeroSalidas, numeroPatrones, direccion, rata, errorMax);
         }
 
         private void Grafica()
@@ -115,6 +117,9 @@ namespace CapaUI
         {
             txtIteracion.Text = "";
             txtDireccionArchivo.Text = "";
+            TxtErrorMax.Text = "";
+            TxtRata.Text = "";
+            txtPatron.Text = "";
             lbTablaSolucion.Items.Clear();
             lbTablaProblema.Items.Clear();
         }
@@ -153,9 +158,23 @@ namespace CapaUI
             CargarSolucionEnDGV();
         }
 
-        private void BtnSimular_Click(object sender, RoutedEventArgs e)
+        private void BtnSimular_Click(object
+            sender, RoutedEventArgs e)
         {
+            LbTablaSimulacion.Items.Clear();
+            string patron = txtPatron.Text;
+            string resultado = perceptron.SimularPerceptron(patron);
 
+            try
+            {
+                LbTablaSimulacion.Items.Add("TABLA RESULTADO DE LA SIMULACION");
+                LbTablaSimulacion.Items.Add(resultado);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(Convert.ToString(ex.Message));
+                return;
+            }
         }
     }
 }

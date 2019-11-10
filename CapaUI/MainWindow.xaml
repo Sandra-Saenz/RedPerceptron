@@ -5,21 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CapaUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="700" Width="800">
     <Grid>
-        <TextBox x:Name="txtIteracion" HorizontalAlignment="Left" Height="23" Margin="117,56,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="txtDireccionArchivo" HorizontalAlignment="Left" Height="23" Margin="117,101,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="279"/>
-        <TextBox x:Name="txtPatron" HorizontalAlignment="Left" Height="23" Margin="117,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
-        <Label Content="Iteraciones:" HorizontalAlignment="Left" Margin="32,53,0,0" VerticalAlignment="Top"/>
-        <Label Content="Archivo:" HorizontalAlignment="Left" Margin="32,97,0,0" VerticalAlignment="Top"/>
-        <Label Content="Patron:" HorizontalAlignment="Left" Margin="32,196,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="lbTablaSolucion" HorizontalAlignment="Left" Height="173" Margin="441,236,0,0" VerticalAlignment="Top" Width="308"/>
-        <ListBox x:Name="lbTablaProblema" HorizontalAlignment="Left" Height="166" Margin="441,56,0,0" VerticalAlignment="Top" Width="308"/>
-        <Button x:Name="BtnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="34,147,0,0" VerticalAlignment="Top" Width="75" Click="BtnLimpiar_Click"/>
-        <Button x:Name="BtnExaminar" Content="Examinar" HorizontalAlignment="Left" Margin="139,147,0,0" VerticalAlignment="Top" Width="75" Click="BtnExaminar_Click"/>
-        <Button x:Name="BtnEntrenar" Content="Entrenar" HorizontalAlignment="Left" Margin="239,147,0,0" VerticalAlignment="Top" Width="75" Click="BtnEntrenar_Click"/>
-        <Button x:Name="BtnSimular" Content="Simular" HorizontalAlignment="Left" Margin="321,199,0,0" VerticalAlignment="Top" Width="75" Click="BtnSimular_Click"/>
-        <Label Content="Red Neuronal Perpeptron" HorizontalAlignment="Left" Margin="275,19,0,0" VerticalAlignment="Top" Width="250" Height="32" FontFamily="Showcard Gothic" FontSize="14"/>
+        <TextBox x:Name="txtIteracion" HorizontalAlignment="Left" Height="23" Margin="139,69,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtDireccionArchivo" HorizontalAlignment="Left" Height="42" Margin="139,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="257"/>
+        <TextBox x:Name="txtPatron" HorizontalAlignment="Left" Height="23" Margin="117,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="184"/>
+        <Label Content="Iteraciones:" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="Archivo:" HorizontalAlignment="Left" Margin="32,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Patron:" HorizontalAlignment="Left" Margin="32,299,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lbTablaSolucion" HorizontalAlignment="Left" Height="177" Margin="441,249,0,0" VerticalAlignment="Top" Width="308"/>
+        <ListBox x:Name="lbTablaProblema" HorizontalAlignment="Left" Height="166" Margin="441,69,0,0" VerticalAlignment="Top" Width="308"/>
+        <Button x:Name="BtnLimpiar" Content="Limpiar" HorizontalAlignment="Left" Margin="34,250,0,0" VerticalAlignment="Top" Width="75" Click="BtnLimpiar_Click"/>
+        <Button x:Name="BtnExaminar" Content="Examinar" HorizontalAlignment="Left" Margin="139,250,0,0" VerticalAlignment="Top" Width="75" Click="BtnExaminar_Click"/>
+        <Button x:Name="BtnEntrenar" Content="Entrenar" HorizontalAlignment="Left" Margin="239,250,0,0" VerticalAlignment="Top" Width="75" Click="BtnEntrenar_Click"/>
+        <Button x:Name="BtnSimular" Content="Simular" HorizontalAlignment="Left" Margin="321,302,0,0" VerticalAlignment="Top" Width="75" Click="BtnSimular_Click"/>
+        <Label Content="Red Neuronal Perpeptron" HorizontalAlignment="Left" Margin="275,32,0,0" VerticalAlignment="Top" Width="250" Height="32" FontFamily="Showcard Gothic" FontSize="14"/>
+        <Label Content="Error maximo:" HorizontalAlignment="Left" Margin="32,106,0,0" VerticalAlignment="Top"/>
+        <Label Content="Rata aprendizaje: " HorizontalAlignment="Left" Margin="32,149,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="TxtErrorMax" HorizontalAlignment="Left" Height="23" Margin="139,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="TxtRata" HorizontalAlignment="Left" Height="23" Margin="141,152,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ListBox x:Name="LbTablaSimulacion" HorizontalAlignment="Left" Height="76" Margin="32,350,0,0" VerticalAlignment="Top" Width="360"/>
 
     </Grid>
 </Window>
