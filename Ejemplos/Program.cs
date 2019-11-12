@@ -7,10 +7,13 @@ namespace CapaConsola
     {
         static void Main(string[] args)
         {
+           /* double d = 140.6767554;
+            Double dc = Math.Round(d, 4);
+            Console.WriteLine(dc); */
 
-            Entrenamiento(30, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv", 0.5, 0.00001);
-            Simulacion("1;0");
-            Console.ReadKey();
+             Entrenamiento(30, "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/problema.csv", 0.5, 0.01);
+             Simulacion("1;0");
+             Console.ReadKey();
         }
 
         private static void Entrenamiento(int iteraciones, string direccionArchivo, double rata, double ErrorMax)
@@ -154,7 +157,7 @@ namespace CapaConsola
                     //calcular los errores lineales producidos a la salida
                     for (int ii = 0; ii < numSalidas; ii++)
                     {
-                        erroresLineales[ii] = (vectorSalida[ii] - SalidaRed[ii]);
+                        erroresLineales[ii] = Math.Round(vectorSalida[ii] - SalidaRed[ii], 4);
                         Console.WriteLine("error lineal " + ii + ": " + erroresLineales[ii]);
                     }
 
@@ -165,11 +168,11 @@ namespace CapaConsola
                         sumaErrores = erroresLineales[a] + sumaErrores;
                     }
 
-                    errorPatron[i] = (sumaErrores / numSalidas);
+                    errorPatron[i] = Math.Round(sumaErrores / numSalidas, 4);
                     Console.WriteLine("error del patron: " + errorPatron[i]);
 
                     //modificar pesos
-                    Console.Write("\n");
+                    Console.Write("\n"); 
                     Console.WriteLine("nueva matriz peso");
 
                     for (int z = 0; z < numEntradas; z++)
@@ -200,7 +203,7 @@ namespace CapaConsola
                     sumaErrorPatron = Math.Abs(errorPatron[l] + sumaErrorPatron);
                 }
 
-                erms = (sumaErrorPatron / Patrones);
+                erms = sumaErrorPatron / Patrones;
                 Console.Write("\n");
                 Console.WriteLine("error entrenamiento " + erms);
 
@@ -256,7 +259,7 @@ namespace CapaConsola
                 numeroAletorio[1] = random.NextDouble() * signo[random.Next(0, 2)];
                 resultado = numeroAletorio[random.Next(0, 3)];
             }
-            return resultado;
+            return Math.Round(resultado, 4);
         }
 
         private static void Simulacion(string patron)

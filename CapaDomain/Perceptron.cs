@@ -24,7 +24,7 @@ namespace CapaDomain
                 numeroAletorio[1] = random.NextDouble() * signo[random.Next(0, 2)];
                 resultado = numeroAletorio[random.Next(0, 3)];
             }
-            return resultado;
+            return Math.Round(resultado, 4);
         }
 
         public void EntrenamientoPerceptron(int iteraciones, int numEntradas, int numSalidas,
@@ -116,7 +116,7 @@ namespace CapaDomain
                     //calcular los errores lineales producidos a la salida
                     for (int ii = 0; ii < numSalidas; ii++)
                     {
-                        erroresLineales[ii] = (vectorSalida[ii] - SalidaRed[ii]);
+                        erroresLineales[ii] = Math.Round(vectorSalida[ii] - SalidaRed[ii], 4);
                     }
 
                     //calcular el error del patron
@@ -126,7 +126,7 @@ namespace CapaDomain
                         sumaErrores = erroresLineales[a] + sumaErrores;
                     }
 
-                    errorPatron[i] = (sumaErrores / numSalidas);
+                    errorPatron[i] = Math.Round(sumaErrores / numSalidas, 4);
 
                     //modificar pesos
                     for (int z = 0; z < numEntradas; z++)
@@ -150,7 +150,7 @@ namespace CapaDomain
                 {
                     sumaErrorPatron = Math.Abs(errorPatron[l] + sumaErrorPatron);
                 }
-                erms = (sumaErrorPatron / numPatrones);
+                erms = sumaErrorPatron / numPatrones;
 
                 if (erms <= emp)
                 {
@@ -241,7 +241,7 @@ namespace CapaDomain
             string[] numeroPatron = patron.Split(';');
             double[] patronSimulado = new double[numEntradas];
 
-            //presentar el vector de entrada y el vector de salida
+            //presentar el patron de entrada 
             for (int w = 0; w < numEntradas; w++)
             {
                 patronSimulado[w] = Convert.ToDouble(numeroPatron[w]);
