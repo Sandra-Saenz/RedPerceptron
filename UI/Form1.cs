@@ -99,9 +99,35 @@ namespace UI
             perceptron.EntrenamientoPerceptron(numeroIteraciones, numeroEntradas, numeroSalidas, numeroPatrones, direccion, rata, errorMax);
         }
 
-        private void Grafica()
+       private void Grafica()
         {
+            /*  chartLine.Series.Clear();
+             string error= "C:/Users/55YV/Downloads/redes/ArchivosPerceptron/errorentrenamiento.txt";
+             try
+             {
+                 StreamReader import = new StreamReader(error);
+                 string linea = import.ReadLine();
+                 string[] numeros = linea.Split(';');
+                 for (int i = 0; i < numeros.Length - 1; i++)
+                 {
 
+                 }
+
+                 import.Close();
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show(Convert.ToString(ex.Message));
+                 return;
+             }
+
+
+
+             chartLine.Titles.Add("Evolucion del error de entrenamiento");
+             chartLine.Palette = ChartColorPalette.Berry;
+             chartLine.DataBindTable(datosSeries, "Iteracion");
+             chartLine.Series[0].ChartType = SeriesChartType.Line;
+             */
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
@@ -168,4 +194,5 @@ namespace UI
             }
         }
     }
+
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 
 namespace CapaDomain
@@ -30,9 +31,10 @@ namespace CapaDomain
         public void EntrenamientoPerceptron(int iteraciones, int numEntradas, int numSalidas,
             int numPatrones,  string direccionArchivo, double rata, double ErrorMax)
         {
-            int num = 1; double emp = ErrorMax; double erms; 
+            int num = 0; double emp = ErrorMax; double erms; 
             double rataAprendizaje = rata;
 
+            List<double> error = new List<double>();
             double[] vectorUmbral = new double[numSalidas];
             double[,] matrizPeso = new double[numEntradas, numSalidas];
             int[,] matrizProblema = new int[numPatrones, numEntradas + numSalidas];
@@ -74,7 +76,7 @@ namespace CapaDomain
 
             //durara hasta que cumpla su criterio de parada
             bool detener =false;
-            while (num <= iteraciones && detener == false)
+            while (num < iteraciones && detener == false)
             {
                 //una iteracion pasa por todos los patrones
                 for (int i = 0; i < numPatrones; i++)
@@ -133,14 +135,14 @@ namespace CapaDomain
                     {
                         for (int x = 0; x < numSalidas; x++)
                         {
-                            matrizPeso[z, x] = (matrizPeso[z, x] + rataAprendizaje * erroresLineales[x] * vectorEntrada[z]);
+                            matrizPeso[z, x] = (matrizPeso[z, x] + (rataAprendizaje * erroresLineales[x] * vectorEntrada[z]));
                         }
                     }
 
                     //modificar umbrales 
                     for (int x = 0; x < numSalidas; x++)
                     {
-                        vectorUmbral[x] = (vectorUmbral[x] + rataAprendizaje * erroresLineales[x] * 1);
+                        vectorUmbral[x] = (vectorUmbral[x] + (rataAprendizaje * erroresLineales[x] * 1));
                     }
                 }
 
@@ -151,6 +153,7 @@ namespace CapaDomain
                     sumaErrorPatron = Math.Abs(errorPatron[l] + sumaErrorPatron);
                 }
                 erms = sumaErrorPatron / numPatrones;
+                error.Add(erms);
 
                 if (erms <= emp)
                 {
@@ -158,6 +161,9 @@ namespace CapaDomain
                 }
                 num++;
             }
+
+
+            double[] errorEntrenamiento = error.ToArray();
 
             using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/redes/ArchivosPerceptron/pesosEntrenamiento.txt", false))
             {
@@ -176,6 +182,14 @@ namespace CapaDomain
                 for (int i = 0; i < vectorUmbral.Length; i++)
                 {
                     writer.Write(vectorUmbral[i].ToString() + ";");
+                }
+            }
+
+            using (StreamWriter writer = new StreamWriter("C:/Users/55YV/Downloads/redes/ArchivosPerceptron/errorentrenamiento.txt", false))
+            {
+                for (int i = 0; i < errorEntrenamiento.Length; i++)
+                {
+                    writer.Write(errorEntrenamiento[i].ToString() + ";");
                 }
             }
         }

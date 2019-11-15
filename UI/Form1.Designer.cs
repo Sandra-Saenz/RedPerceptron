@@ -30,7 +30,6 @@
         {
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartLine = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.BtnLimpiar = new System.Windows.Forms.Button();
             this.BtnExaminar = new System.Windows.Forms.Button();
@@ -61,10 +60,7 @@
             this.chartLine.Legends.Add(legend1);
             this.chartLine.Location = new System.Drawing.Point(195, 487);
             this.chartLine.Name = "chartLine";
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartLine.Series.Add(series1);
+            this.chartLine.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Berry;
             this.chartLine.Size = new System.Drawing.Size(389, 173);
             this.chartLine.TabIndex = 0;
             this.chartLine.Text = "chart1";
