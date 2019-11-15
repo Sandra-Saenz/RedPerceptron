@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\CapaConsola.csproj",
+      "projectUniqueName": "C:\\Users\\55YV\\source\\repos\\Sandra-Saenz\\RedPerceptron\\Ejemplos\\CapaConsola.csproj",
       "projectName": "CapaConsola",
-      "projectPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\CapaConsola.csproj",
+      "projectPath": "C:\\Users\\55YV\\source\\repos\\Sandra-Saenz\\RedPerceptron\\Ejemplos\\CapaConsola.csproj",
       "packagesPath": "C:\\Users\\55YV\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\55YV\\source\\repos\\RedPerceptron\\Ejemplos\\obj\\",
+      "outputPath": "C:\\Users\\55YV\\source\\repos\\Sandra-Saenz\\RedPerceptron\\Ejemplos\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
